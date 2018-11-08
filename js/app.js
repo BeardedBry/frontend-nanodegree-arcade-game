@@ -41,8 +41,21 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = function() {
-    switch()
+Player.prototype.handleInput = function(e) {
+    switch(e) {
+        case 'up':
+            if(this.y > 0){this.y -= 100;};
+            break;
+        case 'down':
+            if(this.y < 400){this.y += 100;};
+            break;
+        case 'left':
+            if(this.x > 0){this.x -= 100;};
+            break;
+        case 'right':
+            if(this.x < 400){this.x += 100;};
+            break;
+    }
 };
 
 
