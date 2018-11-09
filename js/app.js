@@ -21,9 +21,15 @@ Enemy.prototype.update = function(dt) {
         console.log('hit');
     }
 
-    if((this.x - player.x) < 5 && (this.y - player.y) < 5){
-        console.log(this.x - player.x);
-        //collision();
+    let xDistance = this.x - player.x;
+    let yDistance = this.y - player.y;
+
+
+    if(xDistance < 60 && xDistance > -50){
+        if(this.y == player.y){
+            collision()
+        //console.log(this.x - player.x);
+        };
     }
 };
 
