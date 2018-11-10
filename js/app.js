@@ -9,7 +9,7 @@ const Enemy = function() {
     this.x = randomNum(-600,400);
     this.y = randomNum(0,3) * 100;
 
-    // Ranomize enemy speed.
+    // Ranomize enemy movement speed.
     this.speed = randomNum(180,525);
 };
 
@@ -50,7 +50,7 @@ Enemy.prototype.render = function() {
 
 var Player = function() {
     this.sprite = 'images/char-boy.png';
-    // Inital location on bottom center of game.
+    // Inital location at bottom center of game.
     this.x = 200;
     this.y = 400;
 };
