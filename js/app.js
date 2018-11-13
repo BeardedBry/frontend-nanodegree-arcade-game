@@ -1,5 +1,5 @@
-
 // Enemies our player must avoid
+'use strict'
 const Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
@@ -43,10 +43,13 @@ Enemy.prototype.update = function(dt) {
 
 };
 
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
+// Used by Enemy and Player fore rendering sprite.
+ function renderImg() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y+30);
-};
+}; 
+
+// Draw the enemy on the screen, required method for game
+Enemy.prototype.render = renderImg;
 
 var Player = function() {
     this.sprite = 'images/char-boy.png';
@@ -66,9 +69,7 @@ Player.prototype.update = function(dt) {
     }    
 };
 
-Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y+20);
-};
+Player.prototype.render = renderImg;
 
 Player.prototype.handleInput = function(e) {
     switch(e) {
